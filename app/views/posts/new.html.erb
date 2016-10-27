@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<h1> Create Post </h1>
+
+<%= simple_form_for @post do |f| %>
+  <%= f.input :photo %>
+  <%= f.input :description %>
+  <%= f.submit 'Post', class: 'btn btn-default btn-block'%>
+<% end %>
