@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<h1> Post </h1>
+
+<%= image_tag @post.user.photo %> <br>
+<%= @post.user.name %> <br>
+<%= image_tag @post.photo %> <br>
+<%= @post.description %> <br>
+<% if @post.user == current_user %>
+  <%= link_to 'Edit Post', edit_post_path(@post.id) %>
+  <%= link_to 'Delete Post', post_path(@post.id), method: :delete %>
+<% end %>
