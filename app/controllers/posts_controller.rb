@@ -5,6 +5,7 @@ class PostsController < ApplicationController
     
     def index
         @posts=Post.all.order('created_at DESC')
+        @comments=Comment.all
     end
     
     def show
@@ -16,7 +17,7 @@ class PostsController < ApplicationController
     end
     
     def create
-        @post = current_user.Posts.create(post_params)
+        @post = current_user.posts.create(post_params)
         if @post.valid?
              redirect_to root_path
          else

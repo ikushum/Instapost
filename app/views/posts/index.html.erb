@@ -7,11 +7,27 @@
   <%= image_tag post.user.photo, class:'profile_pic' %> <br>
   <%= image_tag post.photo %> <br>
   <%= post.description %> <br>
+  
   <%= link_to 'View Post', post_path(post.id) %>
   <% if post.user == current_user %>
     <%= link_to 'Edit Post', edit_post_path(post.id) %>
     <%= link_to 'Delete Post', post_path(post.id), method: :delete, data: {confirm: "Are you sure?"} %>
+  <% end %><br>
+  
+  <% post.comments.each do |comment| %>
+    <%= comment.user.name %> <br>
+    <%= image_tag comment.user.photo, class:'profile_pic' %> <br>
+    <%= comment.text %><br>
+    <% if comment.user == current_user %>
+      <%= link_to 'Delete Comment', post_comment_path(post.id,comment.id), method: :delete, data: {confirm: "Are you sure?"} %>
+    <% end %> <br>
+  <% end %> 
+  
+  <%= simple_form_for Comment.new, url: post_comments_path(post), method: :post do |f| %>
+    <%= f.input :text, label: 'Comment', placeholder: 'Add a comment...' %>
+    <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
   <% end %>
   <br><br>
+  
 <% end %>
 <% end %>
