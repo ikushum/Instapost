@@ -1,2 +1,14 @@
 <!DOCTYPE html>
-<h1> This is working. Keep going </h1>
+<h1> InstaPost Wall </h1>
+
+<% if user_signed_in? %>
+<% @posts.each do |post| %>
+  <%= post.user.name %> <br>
+  <%= image_tag post.user.photo, class:'profile_pic' %> <br>
+  <%= image_tag post.photo %> <br>
+  <%= post.description %>
+  <% if post.user == current_user %>
+    <%= link_to 'Edit Post', edit_post_path(post.id) %> <br><br>
+  <% end %>
+<% end %>
+<% end %>
