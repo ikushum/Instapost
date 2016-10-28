@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<%= @user.name %> <br>
+<%= image_tag @user.photo, class:'profile_pic' %> <br>
+<br><br>
+<%= pluralize(@user.posts.count, 'post') %>
+<br><br>
+<% @user.posts.each do |post| %>
+    <%= image_tag post.photo %>
+    <br>
+<% end %>

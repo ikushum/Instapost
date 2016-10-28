@@ -3,7 +3,7 @@
 
 <% if user_signed_in? %>
 <% @posts.each do |post| %>
-  <%= post.user.name %> <br>
+  <%= link_to post.user.name, user_path(post.user.id) %> <br>
   <%= image_tag post.user.photo, class:'profile_pic' %> <br>
   <%= image_tag post.photo %> <br>
   <%= post.description %> <br>
@@ -15,7 +15,7 @@
   <% end %><br>
   
   <% post.comments.each do |comment| %>
-    <%= comment.user.name %> <br>
+    <%= link_to comment.user.name, user_path(comment.user.id) %> <br>
     <%= image_tag comment.user.photo, class:'profile_pic' %> <br>
     <%= comment.text %><br>
     <% if comment.user == current_user %>
