@@ -18,6 +18,10 @@
     <% end %><br>
     </div>
   </div>
+  
+   <span id="likes_container_<%= @post.id %>">
+    <%= render partial: 'likes', locals: {post: @post} %>
+  </span>
 
 
   <% @post.comments.each do |comment| %>

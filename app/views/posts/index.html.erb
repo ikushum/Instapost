@@ -11,6 +11,11 @@
   <%= link_to post.user.name, user_path(post.user.id), class: 'post_user_name' %> <br>
   </div>
   <%= image_tag post.photo, class: 'post_photo'%> <br> <br>
+  
+   <span id="likes_container_<%= post.id %>">
+    <%= render partial: 'likes', locals: {post: post} %>
+  </span>
+  
     <div id="post_description">
     <%= link_to post.user.name, user_path(post.user.id), class: 'post_user_name' %> <%= post.description %> <br>
 
@@ -22,8 +27,7 @@
     <% end %><br>
     </div>
   </div>
-
-
+  
   <% post.comments.each do |comment| %>
     <div id="comment">
     <%= link_to comment.user.name, user_path(comment.user.id), class: 'post_user_name' %>
