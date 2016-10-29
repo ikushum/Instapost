@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<h1> Edit Post </h1>
 
+<div style="width:70%;margin:0px auto">
+<h1 class="text-center"> Edit Post </h1>
 <%= simple_form_for @post do |f| %>
   <%= f.input :photo %>
   <%= f.input :description %>
-  <%= f.submit 'Submit', class: 'btn btn-default btn-block'%>
+  <%= f.submit 'Update', class: 'btn btn-primary btn-block comment_post_box'%>
 <% end %>
+</div>
