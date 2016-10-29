@@ -27,6 +27,7 @@ nav {
   border-bottom: 1px solid #dbdbdb;
   background-color: #ffffff;
   height: 76px;
+  width:100%;
 }
 
 .brand {
@@ -195,4 +196,18 @@ h2{
 
 #container{
     min-height:700px;
+}
+
+a:hover{
+    text-decoration:none;
+}
+
+.welcome_page_img{
+    margin:60px;
+    width:300px;
+}
+
+.nav_logo{
+    width:60px;
+    padding-right:30px;
 }

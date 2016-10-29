@@ -6,7 +6,7 @@
 <div id="post">
   <div id="post_body">
   <div id="post_user">
-  <%= image_tag post.user.photo, class:'profile_pic' %>
+  <%= link_to(image_tag(post.user.photo, class:'profile_pic'), user_path(post.user.id)) %>
   <span class="timestamp pull-right"><%= distance_of_time_in_words(DateTime.now, post.created_at) %> ago</span>
   <%= link_to post.user.name, user_path(post.user.id), class: 'post_user_name' %> <br>
   </div>
@@ -50,6 +50,7 @@
 <h2> Welcome To </h2>
 <h1 class="welcome"> Instapost  </h1>
 <h1 style="color:black"> Login or Signup to get started </h1>
+<img class="welcome_page_img" src="https://s21.postimg.org/5en2r5s8n/logo.gif" >
 </div>
 
 
