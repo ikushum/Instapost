@@ -1,33 +1,56 @@
 <!DOCTYPE html>
-<h1> InstaPost Wall </h1>
 
 <% if user_signed_in? %>
+
 <% @posts.each do |post| %>
-  <%= link_to post.user.name, user_path(post.user.id) %> <br>
-  <%= image_tag post.user.photo, class:'profile_pic' %> <br>
-  <%= image_tag post.photo %> <br>
-  <%= post.description %> <br>
-  
-  <%= link_to 'View Post', post_path(post.id) %>
-  <% if post.user == current_user %>
-    <%= link_to 'Edit Post', edit_post_path(post.id) %>
-    <%= link_to 'Delete Post', post_path(post.id), method: :delete, data: {confirm: "Are you sure?"} %>
-  <% end %><br>
-  
+<div id="post">
+  <div id="post_body">
+  <div id="post_user">
+  <%= image_tag post.user.photo, class:'profile_pic' %>
+  <span class="timestamp pull-right"><%= distance_of_time_in_words(DateTime.now, post.created_at) %> ago</span>
+  <%= link_to post.user.name, user_path(post.user.id), class: 'post_user_name' %> <br>
+  </div>
+  <%= image_tag post.photo, class: 'post_photo'%> <br> <br>
+    <div id="post_description">
+    <%= link_to post.user.name, user_path(post.user.id), class: 'post_user_name' %> <%= post.description %> <br>
+
+
+    <%= link_to 'View Post', post_path(post.id), class: 'post_action_links' %>
+    <% if post.user == current_user %>
+    <%= link_to 'Edit Post', edit_post_path(post.id), class: 'post_action_links' %>
+    <%= link_to 'Delete Post', post_path(post.id), method: :delete, data: {confirm: "Are you sure?"}, class: 'post_action_links' %>
+    <% end %><br>
+    </div>
+  </div>
+
+
   <% post.comments.each do |comment| %>
-    <%= link_to comment.user.name, user_path(comment.user.id) %> <br>
-    <%= image_tag comment.user.photo, class:'profile_pic' %> <br>
+    <div id="comment">
+    <%= link_to comment.user.name, user_path(comment.user.id), class: 'post_user_name' %>
     <%= comment.text %><br>
     <% if comment.user == current_user %>
-      <%= link_to 'Delete Comment', post_comment_path(post.id,comment.id), method: :delete, data: {confirm: "Are you sure?"} %>
-    <% end %> <br>
+      <%= link_to 'Delete Comment', post_comment_path(post.id,comment.id), method: :delete, data: {confirm: "Are you sure?"}, class: 'post_action_links' %>
+    <% end %> 
+    </div>
   <% end %> 
-  
+
+
+<div id="comment">
   <%= simple_form_for Comment.new, url: post_comments_path(post), method: :post do |f| %>
-    <%= f.input :text, label: 'Comment', placeholder: 'Add a comment...' %>
-    <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
+    <%= f.input :text, label: false, placeholder: 'Add a comment...' %>
+    <%= f.submit 'Comment', class: 'btn btn-primary btn-block comment_post_box' %>
   <% end %>
-  <br><br>
-  
+</div>
+</div>
 <% end %>
+
+<% else %>
+
+<div id="welcome">
+<h2> Welcome To </h2>
+<h1 class="welcome"> Instapost  </h1>
+<h1 style="color:black"> Login or Signup to get started </h1>
+</div>
+
+
 <% end %>

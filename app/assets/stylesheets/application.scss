@@ -17,7 +17,115 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+body {
+  background-color: #FAFAFA;
+  font-family:helvetica;
+}
+
+nav {
+  border-bottom: 1px solid #dbdbdb;
+  background-color: #ffffff;
+  height: 76px;
+}
+
+.brand {
+  font-family: 'Satisfy', cursive;
+  font-size: 30px;
+  vertical-align: middle;
+  line-height:70px;
+}
+
+#post{
+    width:50%;
+    margin:40px auto;
+    border: 1px solid #dbdbdb;
+    background-color: #ffffff;
+    padding:10px 0px;
+    border-radius:40px;
+}
+
+#post_user{
+    width:100%;
+    background-color:#ffffff;
+    padding:10px;
+    border-radius:40px;
+}
+
+.nav_links{
+    font-size:15px;
+    padding:0px 15px;
+    line-height:80px;
+    font-weight: 500;
+}
+
 .profile_pic{
-    width:100px;
+    width:50px;
     height:auto;
+    border-radius:50px;
+}
+
+.post_user_name{
+    color:black;
+    font-weight:bold;
+    padding:0px 10px;
+}
+
+.timestamp {
+  color: #a5a7aa;
+  font-weight: 500;
+  padding:0px 10px;
+  line-height:45px;
+}
+
+.post_photo{
+    width:100%;
+}
+
+.post_action_links{
+    padding:3px 10px; 
+    color:#a8a8a8;
+    font-size:15px;
+}
+
+#post_description{
+    font-size:15px;
+    padding:0px 10px;
+    max-height:200px;
+}
+
+#comment{
+    font-size:15px;
+    padding:5px 10px;
+}
+
+.comment_post_box{
+    border-radius:60px;
+    padding:5px 10px;
+    margin:0px auto;
+    font-size:20px;
+}
+
+#welcome{
+    width:70%;
+    margin:50px auto;
+    font-family: 'Satisfy', cursive;
+    color:#337ab7;
+    text-align:center;
+}
+
+h1.welcome{
+    font-size:100px;
+    font-weight:bold;
+    line-height:40px;
+    margin-bottom:50px;
+}
+
+h2{
+    font-size:60px;
+}
+
+#sign_up{
+    text-align:center;
+    width:70%;
 }
