@@ -34,6 +34,8 @@ gem 'simple_form'
 gem 'acts_as_votable', '~> 0.10.0'
 #for font_awesome gem
 gem 'font-awesome-sass', '~> 4.6.2'
+#for pagination
+gem 'will_paginate', '~> 3.0.5'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

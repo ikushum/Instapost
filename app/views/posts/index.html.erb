@@ -45,8 +45,14 @@
     <%= f.submit 'Comment', class: 'btn btn-primary btn-block comment_post_box' %>
   <% end %>
 </div>
+
 </div>
+
 <% end %>
+
+<div id="infinite-scrolling" class="text-center">
+  <%= will_paginate %>
+</div>
 
 <% else %>
 
