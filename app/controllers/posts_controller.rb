@@ -6,6 +6,10 @@ class PostsController < ApplicationController
     def index
         @posts=Post.all.order('created_at DESC').paginate(page: params[:page], per_page: 2).includes(:user, comments: :user)
         @comments=Comment.all
+        respond_to do |format|
+          format.html
+          format.js
+        end
     end
     
     def show
