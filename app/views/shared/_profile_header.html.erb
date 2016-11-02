@@ -16,8 +16,7 @@
           <% else %>
               <%= link_to 'Follow', user_follow_index_path(@user.id), method: 'post', class: 'btn btn-default inline-block', remote: true if user_signed_in? && @user != current_user %>
           <% end %>
-         <%= link_to 'EDIT PROFILE', edit_user_registration_path(@user), class: 'user_edit_button btn btn-default' if user_signed_in? && @user == current_user %>
-
+         <%= link_to 'EDIT PROFILE', edit_user_registration_path(@user), class: 'btn btn-default inline-block' if user_signed_in? && @user == current_user %>
           </div>
       </div>
 
