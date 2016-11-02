@@ -38,6 +38,8 @@ gem 'font-awesome-sass', '~> 4.6.2'
 gem 'will_paginate', '~> 3.0.5'
 #bootstrap for pagination
 gem 'bootstrap-will_paginate', '~> 0.0.10'
+#for acts_as_follower
+gem "acts_as_follower"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
