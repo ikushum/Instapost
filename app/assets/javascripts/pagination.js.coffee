@@ -1,9 +1,7 @@
 jQuery ->
-  if $('#infinite-scrolling').size() > 0
+  # if $('#infinite-scrolling').size() > 0
     $(window).on 'scroll', ->
-      more_posts_url = $('.pagination .next_page a').attr('href')
-        if more_posts_url && $(window).scrollTop() > $(document).height() - $(window).height() - 60
-            $('.pagination').html('Loading.......')
-            $.getScript more_posts_url
-        return
-      return
+      #more_posts_url = $('.pagination .next_page a').attr('href')
+        if $(window).scrollTop() > $(document).height() - $(window).height() - 300
+            $('.pagination').html('Loading...')
+            $.getScript($('.pagination .next_page').attr('href'))

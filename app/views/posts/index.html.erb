@@ -10,7 +10,7 @@
   <span class="timestamp pull-right"><%= distance_of_time_in_words(DateTime.now, post.created_at) %> ago</span>
   <%= link_to post.user_name, user_path(post.user_id), class: 'post_user_name' %> <br>
   </div>
-  <%= image_tag post.photo, class: 'post_photo'%> <br> <br>
+  
   
    <span id="likes_container_<%= post.id %>">
     <%= render partial: 'likes', locals: {post: post} %>
@@ -51,7 +51,7 @@
 <% end %>
 
 <div id="infinite-scrolling" class="text-center">
-  <%= will_paginate %>
+  <%= will_paginate @posts %>
 </div>
 
 <% else %>
