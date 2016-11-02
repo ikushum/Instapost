@@ -10,7 +10,12 @@ Rails.application.routes.draw do
    resources :upvotes, only: :create
    resources :downvotes, only: :create
   end
-  resources :users, only: :show
+  
+  resources :users, only: :show do
+    resources :follow, only: :create
+    resources :unfollow, only: :create
+  end
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -7,5 +7,7 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
   acts_as_voter
+  acts_as_follower
+  acts_as_followable
 end
 
